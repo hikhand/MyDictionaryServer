@@ -1,4 +1,3 @@
-import ir.khaled.mydictionary.Helper.DatabaseHelper;
 import ir.khaled.mydictionary.Helper.LogHelper;
 import ir.khaled.mydictionary.Socket.SocketServer;
 
@@ -10,8 +9,8 @@ public class MyDictionary {
     public static void main(String[] args) {
         LogHelper.logD("application started starting server.");
 
-        DatabaseHelper.getInstance();
+//        DatabaseHelper.getInstance();
 
-//        SocketServer.getInstance().startServer();
+        SocketServer.getInstance().startServer();
     }
 }

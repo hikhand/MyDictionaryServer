@@ -1,9 +1,9 @@
 package ir.khaled.mydictionary.Socket;
 
-import ir.khaled.mydictionary.Helper.LogHelper;
-
 import java.net.ServerSocket;
 import java.util.ArrayList;
+
+import ir.khaled.mydictionary.Helper.LogHelper;
 
 /**
  * Created by khaled.bakhtiari on 4/29/2014.
@@ -31,7 +31,7 @@ public class SocketServer implements SocketConnection.ISocketConnectionListener 
             return;
 
         try {
-            mListener = new ServerSocket(9090);
+            mListener = new ServerSocket(44485);
             LogHelper.logD("Server started.");
             while (true) {
                 SocketConnection socketConnection = new SocketConnection(mListener.accept(), mSocketConnections.size() + 1, this);

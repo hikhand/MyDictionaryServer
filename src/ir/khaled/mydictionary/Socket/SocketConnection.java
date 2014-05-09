@@ -1,16 +1,16 @@
 package ir.khaled.mydictionary.Socket;
 
-import ir.khaled.mydictionary.Helper.ErrorHelper;
-import ir.khaled.mydictionary.Helper.LogHelper;
-import ir.khaled.mydictionary.Helper.RequestResolver;
-import ir.khaled.mydictionary.model.Device;
-import ir.khaled.mydictionary.model.Response;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
+
+import ir.khaled.mydictionary.Helper.ErrorHelper;
+import ir.khaled.mydictionary.Helper.LogHelper;
+import ir.khaled.mydictionary.Helper.RequestResolver;
+import ir.khaled.mydictionary.model.Device;
+import ir.khaled.mydictionary.model.Response;
 
 /**
  * Created by khaled.bakhtiari on 4/29/2014.
@@ -43,14 +43,14 @@ public class SocketConnection extends Thread {
         try {
             onConnectionEstablished();
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
             LogHelper.logD("Error handling client#" + mSocketId + " with Ip address: " + mSocket.getInetAddress() + ": " + e);
         } finally {
             try {
                 mSocket.close();
             } catch (IOException e) {
                 LogHelper.logD("Couldn't close the socket#" + mSocketId + ", what's going on?");
-                e.printStackTrace();
+//                e.printStackTrace();
             }
             mSocketConnectionListener.onSocketConnectionClosed(this);
             LogHelper.logD("Connection with client#" + mSocketId + " closed");
